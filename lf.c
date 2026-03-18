@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
         names = realloc(names, sizeof(char*) * (count + 1));
         names[count++] = strdup(de->d_name);
     }
-    closedir (dir);
+    closedir(dir);
     for (int i = 0; i < count - 1; i++) {
        for (int j = 0; j < count - i - 1; j++) {
            if (strcmp(names[j], names[j + 1]) > 0) {
