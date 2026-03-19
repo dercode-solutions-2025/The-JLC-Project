@@ -16,13 +16,13 @@ int main(int argc, char** argv) {
         return 1;
     }
     else {
-        dir = opendir (argv[1]);
+        dir = opendir(argv[1]);
     }
     if (dir == NULL) {
         perror ("FATAL ERROR");
         return 2;
     }
-    while ((de = readdir (dir)) != NULL) {
+    while ((de = readdir(dir)) != NULL) {
         names = realloc(names, sizeof(char*) * (count + 1));
         names[count++] = strdup(de->d_name);
     }

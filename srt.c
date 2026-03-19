@@ -20,7 +20,8 @@ int main(int argc, char *argv[]) {
     }
     FILE *f = fopen(argv[1], "r");
     if (!f) {
-        perror(argv[1]); return 2;
+        perror(argv[1]);
+        return 2;
     }
     char** buf = NULL;
     unsigned long lines_filled = 0;
@@ -30,7 +31,7 @@ int main(int argc, char *argv[]) {
     while (fgets(tmp, LINE_BUF, f) != NULL) {
         if (lines_filled == size_of_buf) {
             size_of_buf *= 2;
-            buf = realloc(buf, size_of_buf * sizeof(char *));
+            buf = realloc(buf, size_of_buf * sizeof(char*));
             if (!buf) {
                 perror("FATAL ERROR");
                 fclose(f);

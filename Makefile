@@ -33,5 +33,5 @@ srt: srt.c
 clean:
 	rm -f mat jgrep move cpy print lf perm spec srt
 
-install: mat jgrep move cpy lf perm
+install: mat jgrep move cpy lf perm spec srt
 	sudo cp mat jgrep move cpy print lf perm spec srt /usr/bin/
