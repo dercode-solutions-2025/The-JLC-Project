@@ -36,6 +36,7 @@ Contributions that violate these laws (e.g., adding unnecessary features, increa
 - **Language**: C (standard C99 or later for portability).
 - **Style**: Follow K&R style (as in the Linux kernel or suckless projects). Use tabs for indentation, no trailing whitespace, and consistent naming (`snake_case` for variables/functions).
 - **Error Handling**: Use simple, explicit checks. Avoid exceptions or complex error propagation—return codes or `errno` suffice.
+- **Exit Codes**: For errors, use incrementing integer exit codes starting from 1 (e.g., return 1 for the first type of error, 2 for the second, etc.). This ensures consistent and predictable error signaling across utilities.
 - **Memory Management**: Manual allocation/deallocation only. No garbage collection or smart pointers. Free resources promptly to prevent leaks.
 - **Portability**: Code must compile on POSIX systems (Linux, BSD, etc.) without platform-specific extensions unless justified.
 - **Testing**: Provide simple test cases or scripts. Manual testing is encouraged; avoid heavy test frameworks.
