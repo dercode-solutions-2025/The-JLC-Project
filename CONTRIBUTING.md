@@ -21,7 +21,7 @@ Contributions that violate these laws (e.g., adding unnecessary features, increa
 ## Code Guidelines
 
 ### Size Constraints
-- **Maximum lines per code piece**: Every function, module, or standalone code unit must be **50 lines or fewer**. This enforces focus and readability. Break larger logic into smaller, composable functions.
+- **Maximum lines per code piece**: Every function, module, or standalone code unit must be **100 lines or fewer**. This enforces focus and readability. Break larger logic into smaller, composable functions.
 - "Code piece" refers to individual functions or small modules (e.g., a single utility's main logic). Entire files can be longer if they contain multiple small pieces, but each piece must adhere to the limit.
 - **Exceptions**: Comments, blank lines, and preprocessor directives (e.g., `#include`) do not count toward the line limit.
 - **Rationale**: Large functions are harder to understand, test, and maintain. This rule promotes the UNIX principle and suckless minimalism.
@@ -58,7 +58,7 @@ Contributions that violate these laws (e.g., adding unnecessary features, increa
 5. **Review Process**: Maintainers will check for compliance with principles, size limits, and quality. Be prepared to refactor if needed.
 
 ## Examples of Compliant Code
-A utility like `cpy.c` (file copying) should be under 50 lines, include only essentials like `<stdio.h>` and `<stdlib.h>`, and do nothing but copy files efficiently.
+A utility like `cpy.c` (file copying) should be under 100 lines, include only essentials like `<stdio.h>` and `<stdlib.h>`, and do nothing but copy files efficiently.
 
 Avoid adding features like progress bars or GUI wrappers—these violate "do one thing well."
 
@@ -66,7 +66,7 @@ Avoid adding features like progress bars or GUI wrappers—these violate "do one
 - **Bloat**: Don't add optional features or configurations. If it's not core, it doesn't belong.
 - **Dependencies**: No external libs (e.g., no libcurl for networking unless the tool is purely for that).
 - **Over-Abstraction**: Use plain C—no OOP, generics, or macros unless they simplify without adding complexity.
-- **Ignoring Limits**: If your code exceeds 50 lines or 5 headers, split it or simplify. No exceptions without maintainer approval.
+- **Ignoring Limits**: If your code exceeds 100 lines or 5 headers, split it or simplify. No exceptions without maintainer approval.
 
 ## Resources
 - [UNIX Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
