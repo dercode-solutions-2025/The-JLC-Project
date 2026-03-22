@@ -2,6 +2,8 @@
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cstdlib>
+#include <iostream>
 
 int main(int argc, char** argv) {
     struct dirent* de;
@@ -19,7 +21,8 @@ int main(int argc, char** argv) {
         dir = opendir(argv[1]);
     }
     if (dir == NULL) {
-        perror ("FATAL ERROR");
+        perror("[ERROR]: Directory is empty.\n");
+        std::exit(1);
         return 2;
     }
     while ((de = readdir(dir)) != NULL) {
@@ -37,7 +40,7 @@ int main(int argc, char** argv) {
        }
     }
     for (int i = 0; i < count; i++) {
-        printf("%s\n", names[i]);
+        std::cout << names[i] << "\n";
         free(names[i]);
     }
     return 0;
