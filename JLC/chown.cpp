@@ -4,6 +4,7 @@
 #include <iostream>
 #include <errno.h>
 #include <string.h>
+#include <cstdlib>
 
 int main(int argc, char** argv) {
     if (argc != 3) {
@@ -31,6 +32,7 @@ int main(int argc, char** argv) {
 
     if (chown(argv[2], owner, group) != 0) {
         perror("[ERROR CODE]: %s\n[ERROR MESSAGE]: %s", errno, strerror(errno));
+        std::exit(1);
         return 2;
     }
 
