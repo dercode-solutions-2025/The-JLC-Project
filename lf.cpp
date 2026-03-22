@@ -1,3 +1,7 @@
+/*
+Ported to C++ by dercode-solutions-2025
+March 21, 2026
+*/
 #include <stdio.h>
 #include <dirent.h>
 #include <stdlib.h>
