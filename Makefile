@@ -33,11 +33,11 @@ srt: srt.c
 hn: hn.c
 	$(CC) $(CFLAGS) hn.c -o hn
 
-chwn: chwn.c
-	$(CC) $(CFLAGS) chwn.c -o chwn
+chwn: chown.ccpp
+	$(CC) $(CFLAGS) chown.cpp -o chwn
 
-brit: brit.c
-	$(CC) $(CFLAGS) brit.c -o brit
+brit: brit.cpp
+	$(CC) $(CFLAGS) brit.cpp -o brit
 
 clean:
 	rm -f mat jgrep move cpy print lf perm spec srt hn chwn brit
