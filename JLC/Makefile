@@ -1,4 +1,4 @@
-CC = gcc
+CC = g++
 CFLAGS = -Wall -Wextra
 
 all: mat jgrep move cpy print lf perm spec srt hn chwn brit
