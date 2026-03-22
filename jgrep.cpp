@@ -1,6 +1,11 @@
+/*
+Ported to C++ by dercode-solutions-2025
+March 21, 2026
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cstdlib>
 #define BUFFSIZE 1024
 int main(int argc, char** argv) {
     if (argc < 2 || argc > 3) {
@@ -11,7 +16,8 @@ int main(int argc, char** argv) {
     if (argc == 3) {
         file = fopen(argv[2], "r");
         if (file == NULL) {
-            perror("FATAL ERROR");
+            perror("[ERROR]: File is empty.\n");
+            std::exit(1);
             return 3;
         }
     } else {
@@ -41,16 +47,17 @@ int main(int argc, char** argv) {
         if (!got_line) break;
 
         if (strstr(buf, argv[1]) != NULL) {
-            printf("%s", buf);
+            std::cout << buf << "\n";
             found = 1;
         }
     }
     if (buf == NULL) {
-        perror("FATAL ERROR");
+        perror("[ERROR]: Buffer = Null!");
+        std::exit(1);
         return 1;
     }
     if (!found) {
-        printf("NOT FOUND!\n");
+        printf("[ERROR]: Not found!\n");
     }
     free(buf);
     if (argc == 3) {
